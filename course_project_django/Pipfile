@@ -13,5 +13,8 @@ docker = "*"
 redis = "*"
 celery = "==4.4.7"
 djangorestframework-simplejwt = "*"
+drf-yasg = "*"
+pillow = "*"
+
 [requires]
 python_version = "3.8"
