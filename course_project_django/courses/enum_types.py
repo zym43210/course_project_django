@@ -10,3 +10,9 @@ class HomeworkType(BaseEnum):
     PENDING = 'pending'
     ACTIVE = 'active'
     FINISHED = 'finished'
+
+
+class CourseType(BaseEnum):
+    PENDING = 'pending'
+    ACTIVE = 'active'
+    FINISHED = 'finished'

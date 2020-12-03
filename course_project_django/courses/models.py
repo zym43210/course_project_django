@@ -3,7 +3,7 @@ import os
 from django.db import models
 
 from users.models import User
-from courses.enum_types import RolesType, HomeworkType
+from courses.enum_types import RolesType, HomeworkType, CourseType
 
 
 def get_upload_path(self, filename):
@@ -37,6 +37,12 @@ class Course(models.Model):
     title = models.CharField(blank=True, max_length=256)
     logo = models.ImageField(upload_to=get_upload_path, blank=True)
     subject = models.CharField(blank=True, max_length=256)
+    status = models.CharField(
+        max_length=10,
+        choices=CourseType.items(),
+        default=CourseType.PENDING.value
+    )
+    status_date = models.DateField(auto_now_add=True)
 
     def image_path(self):
         return os.path.join(f'course_logo/{self.id}')
